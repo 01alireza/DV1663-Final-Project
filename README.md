@@ -66,8 +66,8 @@ python testdata.py
 ---
 
 ## 🚀 Usage
-##SQL Query Examples
-##View user transactions
+###SQL Query Examples
+###View user transactions
 
 ```sql
 
@@ -75,11 +75,9 @@ SELECT t.date, c.name AS category, t.amount, t.description
 FROM transactions t
 JOIN categories c ON t.category_id = c.category_id
 WHERE t.user_id = 1;
-Monthly category totals
 ```
-sql
-Copy
-Edit
+### Monthly category totals
+```sql
 SELECT c.name AS category, SUM(t.amount) AS total
 FROM transactions t
 JOIN categories c ON t.category_id = c.category_id
@@ -87,11 +85,10 @@ WHERE t.user_id = 1
   AND YEAR(t.date) = YEAR(CURRENT_DATE())
   AND MONTH(t.date) = 2
 GROUP BY c.name;
-Yearly income/expense summary
+```
+###Yearly income/expense summary
 
-sql
-Copy
-Edit
+```sql
 SELECT MONTH(date) AS month,
        SUM(CASE WHEN amount >= 0 THEN amount ELSE 0 END) AS total_income,
        SUM(CASE WHEN amount < 0 THEN -amount ELSE 0 END) AS total_expense
@@ -99,73 +96,63 @@ FROM transactions
 WHERE user_id = 1
   AND YEAR(date) = YEAR(CURRENT_DATE())
 GROUP BY MONTH(date);
-Python Interface Features
-➕ Add users and categories
+```
+### Python Interface Features
+- ➕ Add users and categories
+- 💵 Record transactions (income/expense)
+- 👀 View transactions and reports
+- 🧪 Generate test data
+- ⚠️ Check balance warnings
 
-💵 Record transactions (income/expense)
+## 🔧 Advanced Features
 
-👀 View transactions and reports
-
-🧪 Generate test data
-
-⚠️ Check balance warnings
-
-🔧 Advanced Features
-Automated Warnings System
+### Automated Warnings System
 Trigger check_negative_balance:
 
-Checks balance after each transaction
+- Checks balance after each transaction
+- Inserts warning records for negative balances
+- Includes transaction details and calculated balance
 
-Inserts warning records for negative balances
-
-Includes transaction details and calculated balance
-
-Monthly Balance Function
-sql
-Copy
-Edit
+### Monthly Balance Function
+```sql
 SELECT monthly_balance(2, 2, 2025) AS bob_feb_balance;
+```
 Negative Transactions View
-sql
-Copy
-Edit
+```sql
 CREATE VIEW negative_transactions AS
 SELECT * FROM transactions WHERE amount < 0;
-📊 Sample Data
+```
+---
+
+## 📊 Sample Data
 The database includes sample data for two users:
 
 Ali: Regular income with consistent spending
 
 Bob: Smaller income with occasional negative balances (triggering warnings)
 
-🛠️ Technical Details
-Database: MySQL
+---
 
-Character Set: UTF-8
+## 🛠️ Technical Details
+- Database: MySQL
+- Character Set: UTF-8
+- Decimal Precision: 10,2 for monetary values
+- Timestamps: Automatic creation timestamps for warnings
+- Constraints: Foreign keys with ON DELETE CASCADE
 
-Decimal Precision: 10,2 for monetary values
-
-Timestamps: Automatic creation timestamps for warnings
-
-Constraints: Foreign keys with ON DELETE CASCADE
-
-📝 License
+## 📝 License
 This project is for educational purposes. Feel free to modify and use for personal budget tracking.
 
-🤝 Contributing
-Fork the repository
+## 🤝 Contributing
+- Fork the repository
 
-Create a feature branch
+- Create a feature branch
 
-Commit your changes
+- Commit your changes
 
-Push to the branch
+- Push to the branch
 
-Create a Pull Request
+- Create a Pull Request
 
-📧 Support
+## 📧 Support
 For questions or issues, please check the SQL scripts for implementation details or review the Python interface code for usage examples.
-
-
-
-
