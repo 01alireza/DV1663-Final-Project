@@ -41,7 +41,8 @@ mysql -u root -p < tables_creation.sql
 
 # Then populate with sample data and procedures
 mysql -u root -p < SQL_queries.sql
-2. Python Interface Setup
+
+### 2. Python Interface Setup
 bash
 Copy
 Edit
@@ -165,3 +166,4 @@ Create a Pull Request
 
 📧 Support
 For questions or issues, please check the SQL scripts for implementation details or review the Python interface code for usage examples.
+
