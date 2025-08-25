@@ -58,25 +58,25 @@ config = {
 }
 ```
 ---
-Run the Python interface:
+### Run the Python interface:
 
-bash
-Copy
-Edit
+```bash
 python testdata.py
-🚀 Usage
-SQL Query Examples
-View user transactions
+```
+---
 
-sql
-Copy
-Edit
+## 🚀 Usage
+##SQL Query Examples
+##View user transactions
+
+```sql
+
 SELECT t.date, c.name AS category, t.amount, t.description
 FROM transactions t
 JOIN categories c ON t.category_id = c.category_id
 WHERE t.user_id = 1;
 Monthly category totals
-
+```
 sql
 Copy
 Edit
@@ -165,6 +165,7 @@ Create a Pull Request
 
 📧 Support
 For questions or issues, please check the SQL scripts for implementation details or review the Python interface code for usage examples.
+
 
 
 
