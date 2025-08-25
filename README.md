@@ -47,7 +47,7 @@ mysql -u root -p < SQL_queries.sql
 # Install required dependencies
 pip install mysql-connector-python
 ```
-###Configure database connection in testdata.py:
+### Configure database connection in testdata.py:
 ```python
 
 config = {
@@ -66,8 +66,8 @@ python testdata.py
 ---
 
 ## 🚀 Usage
-###SQL Query Examples
-###View user transactions
+### SQL Query Examples
+### View user transactions
 
 ```sql
 
@@ -86,7 +86,7 @@ WHERE t.user_id = 1
   AND MONTH(t.date) = 2
 GROUP BY c.name;
 ```
-###Yearly income/expense summary
+### Yearly income/expense summary
 
 ```sql
 SELECT MONTH(date) AS month,
@@ -156,3 +156,4 @@ This project is for educational purposes. Feel free to modify and use for person
 
 ## 📧 Support
 For questions or issues, please check the SQL scripts for implementation details or review the Python interface code for usage examples.
+
