@@ -41,13 +41,13 @@ mysql -u root -p < tables_creation.sql
 
 # Then populate with sample data and procedures
 mysql -u root -p < SQL_queries.sql
----
+```
 ### 2. Python Interface Setup
 ```bash
 # Install required dependencies
 pip install mysql-connector-python
-Configure database connection in testdata.py:
-
+```
+###Configure database connection in testdata.py:
 ```python
 
 config = {
@@ -56,6 +56,7 @@ config = {
     'host': 'localhost',
     'database': 'Project'
 }
+```
 ---
 Run the Python interface:
 
@@ -164,5 +165,6 @@ Create a Pull Request
 
 📧 Support
 For questions or issues, please check the SQL scripts for implementation details or review the Python interface code for usage examples.
+
 
 
